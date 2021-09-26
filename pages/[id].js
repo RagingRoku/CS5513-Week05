@@ -38,6 +38,10 @@ export default function Entry({itemData, akaData}){
     <Layout>
     <article className="card col-6">
       <div className="card-body">
+      {/* If itemData and akaData exist, render the data, otherwise print nothing/null */}
+
+      {(akaData||itemData) ? 
+        <>
         <h5 className="card-title">{itemData.name}</h5>
         <h6 className="card-subtitle mb-2 text-muted">{itemData.phone}</h6>
         <p className="card-text">{itemData.birthdate}</p>
@@ -47,10 +51,8 @@ export default function Entry({itemData, akaData}){
             <a className="card-link">{akaData.name}</a>
           </Link>     
         </p>
-
-        
-
-
+        </>
+      : null }
 
       </div>
     </article>

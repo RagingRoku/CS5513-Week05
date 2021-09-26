@@ -20,11 +20,14 @@ export default function Home({ allData }) {
           List of Names
           </h1>
           <div className="list-group col-6">
-            {allData.map(({ id, name }) => (
-              <Link key={id} href={`/${id}`}>
-                <a className="list-group-item list-group-item-action"> {name} </a>
-              </Link>
-            ))}
+          {/* If allData exists, map the data, otherwise print nothing/null */}
+            {allData ? 
+              allData.map(({ id, name }) => (
+                <Link key={id} href={`/${id}`}>
+                  <a className="list-group-item list-group-item-action"> {name} </a>
+                </Link>
+              )) : null
+              }
           </div>
         </Layout>
   );
